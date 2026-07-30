@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaycee Encarnacion — Executive Assistant & Event Production Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #0F1117;
+  --bg2:       #161B27;
+  --bg3:       #1C2333;
+  --accent:    #3B82F6;
+  --accent-lt: #60A5FA;
+  --accent-dim:#1E3A5F;
+  --text:      #F1F5F9;
+  --text2:     #94A3B8;
+  --text3:     #64748B;
+  --border:    rgba(148,163,184,0.10);
+  --border2:   rgba(59,130,246,0.30);
+  --card:      #161B27;
+  --card2:     #1C2333;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;background:rgba(15,17,23,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:0.3px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:0.8rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:#fff;padding:9px 20px;border-radius:4px;font-size:0.8rem;font-weight:600;letter-spacing:0.5px;text-decoration:none;transition:background 0.2s,transform 0.15s}
+.nav-cta:hover{background:var(--accent-lt);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text2)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;padding:120px 6vw 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:600px;height:600px;background:radial-gradient(ellipse at top right,rgba(59,130,246,0.08) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(59,130,246,0.04) 0%,transparent 70%);pointer-events:none}
+.hero-eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--accent)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:12px;color:var(--text)}
+.hero-role{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;font-style:italic;color:var(--accent);min-height:1.4em;margin-bottom:28px}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--accent);margin-left:2px;vertical-align:middle;animation:blink 0.9s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-statement{font-size:1rem;color:var(--text2);max-width:480px;margin-bottom:40px;line-height:1.8;font-weight:300}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:14px 30px;border-radius:4px;font-size:0.88rem;font-weight:600;text-decoration:none;letter-spacing:0.5px;transition:all 0.2s;display:inline-block}
+.btn-primary:hover{background:var(--accent-lt);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--text);padding:13px 30px;border-radius:4px;border:1px solid var(--border2);font-size:0.88rem;font-weight:500;text-decoration:none;transition:all 0.2s;display:inline-block}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-portrait{position:relative}
+.portrait-frame{width:100%;aspect-ratio:3/4;background:var(--bg2);border:1px solid var(--border);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;position:relative;overflow:hidden}
+.portrait-frame::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,0.06) 0%,transparent 60%)}
+.portrait-corner{position:absolute;width:28px;height:28px;border-color:var(--accent);border-style:solid;opacity:0.6}
+.portrait-corner.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.portrait-corner.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.portrait-corner.bl{bottom:16px;left:16px;border-width:0 0 1.5px 1.5px}
+.portrait-corner.br{bottom:16px;right:16px;border-width:0 1.5px 1.5px 0}
+.portrait-icon{width:56px;height:56px;border-radius:50%;background:var(--accent-dim);display:flex;align-items:center;justify-content:center}
+.portrait-icon svg{width:28px;height:28px;stroke:var(--accent-lt);fill:none;stroke-width:1.5}
+.portrait-label{font-size:0.75rem;letter-spacing:1.5px;color:var(--text3);text-transform:uppercase}
+.portrait-sublabel{font-size:0.7rem;color:var(--text3);opacity:0.6;margin-top:-10px}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 6vw;display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.stat-item{text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--accent);line-height:1}
+.stat-lbl{font-size:0.72rem;letter-spacing:0.5px;color:var(--text3);margin-top:4px}
+
+/* ── SECTIONS ── */
+section{padding:100px 6vw}
+.sec-eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sec-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--accent)}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--text);line-height:1.2;margin-bottom:16px}
+.sec-sub{font-size:0.95rem;color:var(--text2);max-width:560px;line-height:1.8;margin-bottom:56px;font-weight:300}
+
+/* ── ABOUT ── */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:start}
+.about-body p{font-size:0.97rem;color:var(--text2);line-height:1.9;margin-bottom:20px;font-weight:300}
+.about-body p strong{color:var(--text);font-weight:500}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tag{background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:0.75rem;padding:6px 14px;border-radius:2px;letter-spacing:0.3px;transition:all 0.2s}
+.tag:hover{border-color:var(--accent);color:var(--accent)}
+.about-aside{display:flex;flex-direction:column;gap:20px}
+.aside-card{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:22px 24px;transition:border-color 0.2s}
+.aside-card:hover{border-color:var(--border2)}
+.aside-card-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent);line-height:1}
+.aside-card-lbl{font-size:0.82rem;color:var(--text2);margin-top:4px}
+
+/* ── EXPERIENCE TIMELINE ── */
+#experience{background:var(--bg)}
+.timeline{max-width:860px;position:relative}
+.timeline::before{content:'';position:absolute;left:148px;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{display:grid;grid-template-columns:148px 1fr;gap:0;margin-bottom:0;position:relative}
+.tl-item+.tl-item{margin-top:8px}
+.tl-date{padding:28px 28px 28px 0;text-align:right;font-size:0.78rem;color:var(--text3);line-height:1.5;padding-top:32px}
+.tl-body{padding:24px 0 24px 36px;position:relative;border-bottom:1px solid var(--border)}
+.tl-item:last-child .tl-body{border-bottom:none}
+.tl-dot{position:absolute;left:-5px;top:32px;width:10px;height:10px;border-radius:50%;background:var(--bg3);border:1.5px solid var(--accent);transition:background 0.2s}
+.tl-item:hover .tl-dot{background:var(--accent)}
+.tl-tag{display:inline-block;font-size:0.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.tl-role{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.tl-org{font-size:0.82rem;color:var(--text2);margin-bottom:10px}
+.tl-desc{font-size:0.88rem;color:var(--text3);line-height:1.75;font-weight:300}
+.tl-badge{display:inline-block;margin-top:10px;font-size:0.7rem;background:rgba(59,130,246,0.12);color:var(--accent-lt);padding:3px 10px;border-radius:2px;border:1px solid rgba(59,130,246,0.2)}
+
+/* ── SERVICES ── */
+#services{background:var(--bg2)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.service-card{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:28px 24px;transition:all 0.25s;cursor:default}
+.service-card:hover{border-color:var(--accent);transform:translateY(-3px);background:rgba(59,130,246,0.04)}
+.service-icon{width:40px;height:40px;background:var(--accent-dim);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-icon svg{width:20px;height:20px;stroke:var(--accent-lt);fill:none;stroke-width:1.8}
+.service-name{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:8px}
+.service-desc{font-size:0.82rem;color:var(--text3);line-height:1.65}
+
+/* ── PORTFOLIO ── */
+#portfolio{background:var(--bg)}
+.portfolio-tabs{display:flex;gap:0;margin-bottom:48px;border:1px solid var(--border);border-radius:4px;overflow:hidden;width:fit-content}
+.ptab{padding:11px 24px;font-size:0.82rem;font-weight:500;color:var(--text2);cursor:pointer;border:none;background:transparent;transition:all 0.2s;letter-spacing:0.3px}
+.ptab.active{background:var(--accent);color:#fff}
+.ptab:not(.active):hover{color:var(--text);background:var(--bg2)}
+.portfolio-section{display:none}
+.portfolio-section.active{display:block}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all 0.25s;cursor:pointer}
+.gallery-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+.gallery-card:hover .gallery-overlay{opacity:1}
+.gallery-thumb{aspect-ratio:4/3;background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden}
+.gallery-thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,0.05) 0%,transparent 60%);pointer-events:none;z-index:1}
+.gallery-thumb.has-media::before{display:none}
+
+/* ── CAROUSEL ── */
+.carousel-img,.media-thumb-img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:rgba(15,17,23,0.55);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:1.1rem;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;opacity:0;transition:opacity 0.2s,background 0.2s}
+.gallery-thumb:hover .carousel-arrow{opacity:1}
+.carousel-arrow:hover{background:rgba(59,130,246,0.85)}
+.carousel-arrow.prev{left:10px}
+.carousel-arrow.next{right:10px}
+.carousel-counter{position:absolute;bottom:10px;right:10px;background:rgba(15,17,23,0.6);color:#fff;font-size:0.68rem;letter-spacing:0.5px;padding:3px 9px;border-radius:10px;z-index:3}
+
+/* ── MEDIA CARD LINK ── */
+.gallery-card-link{display:block;color:inherit;text-decoration:none}
+.media-thumb{position:relative}
+.media-thumb .gallery-overlay{background:rgba(15,17,23,0.35)}
+.gallery-thumb-icon{width:44px;height:44px;background:rgba(59,130,246,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.gallery-thumb-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.5}
+.gallery-thumb-txt{font-size:0.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(59,130,246,0.18);opacity:0;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center}
+.gallery-overlay span{font-size:0.75rem;font-weight:600;letter-spacing:1px;color:#fff;background:rgba(0,0,0,0.5);padding:6px 14px;border-radius:2px}
+.gallery-info{padding:16px}
+.gallery-tag{font-size:0.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.gallery-name{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.gallery-meta{font-size:0.78rem;color:var(--text3)}
+
+/* masonry BTS */
+.masonry{columns:3;gap:16px}
+.masonry-item{break-inside:avoid;margin-bottom:16px;background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all 0.25s;cursor:pointer}
+.masonry-item:hover{border-color:var(--border2);transform:scale(1.01)}
+.masonry-ph{background:var(--bg3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.masonry-ph.tall{height:260px}
+.masonry-ph.med{height:180px}
+.masonry-ph.short{height:140px}
+.masonry-ph svg{width:22px;height:22px;stroke:var(--text3);fill:none;stroke-width:1.5}
+.masonry-ph span{font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3)}
+.masonry-cap{padding:12px 14px;font-size:0.78rem;color:var(--text3)}
+
+/* ── SKILLS ── */
+#skills{background:var(--bg2)}
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.skill-group-title{font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.skill-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px}
+.skill-card{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:16px 18px;transition:all 0.2s}
+.skill-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.skill-card-name{font-size:0.88rem;font-weight:500;color:var(--text);margin-bottom:3px}
+.skill-card-sub{font-size:0.75rem;color:var(--text3)}
+.software-list{display:flex;flex-direction:column;gap:10px}
+.software-item{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;transition:all 0.2s}
+.software-item:hover{border-color:var(--border2)}
+.software-name{font-size:0.85rem;font-weight:500;color:var(--text)}
+.software-level{display:flex;gap:4px}
+.dot-fill{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.dot-empty{width:6px;height:6px;border-radius:50%;background:var(--bg);border:1px solid var(--text3)}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+.contact-info-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;color:var(--text);margin-bottom:14px}
+.contact-info p{font-size:0.92rem;color:var(--text2);line-height:1.8;margin-bottom:28px;font-weight:300}
+.contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:14px;text-decoration:none;transition:all 0.2s;padding:12px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:4px}
+.contact-detail:hover{border-color:var(--border2);transform:translateX(4px)}
+.c-icon{width:34px;height:34px;background:var(--accent-dim);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-icon svg{width:16px;height:16px;stroke:var(--accent-lt);fill:none;stroke-width:1.8}
+.c-label{font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px}
+.c-value{font-size:0.88rem;color:var(--text);font-weight:500}
+.socials{display:flex;gap:10px;margin-top:24px}
+.social-btn{width:40px;height:40px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.2s}
+.social-btn:hover{border-color:var(--accent);background:var(--accent-dim)}
+.social-btn svg{width:16px;height:16px;stroke:var(--text2);fill:none;stroke-width:1.8;transition:stroke 0.2s}
+.social-btn:hover svg{stroke:var(--accent-lt)}
+
+/* FORM */
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text3)}
+.form-group input,.form-group textarea,.form-group select{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:0.88rem;color:var(--text);transition:border-color 0.2s;outline:none;resize:none;-webkit-appearance:none}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text3)}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group textarea{height:130px}
+.btn-send{background:var(--accent);color:#fff;border:none;padding:14px 32px;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;letter-spacing:0.5px;transition:all 0.2s;align-self:flex-start}
+.btn-send:hover{background:var(--accent-lt);transform:translateY(-2px)}
+#form-msg{font-size:0.8rem;color:var(--accent-lt);margin-top:-8px;min-height:1em}
+
+/* ── FOOTER ── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 6vw;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:var(--text3);flex-wrap:wrap;gap:10px}
+footer a{color:var(--text2);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--accent)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;max-width:640px}
+  .hero-portrait{display:none}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .skills-wrap{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .masonry{columns:2}
+  .stats-bar{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .gallery-grid{grid-template-columns:1fr}
+  .masonry{columns:1}
+  .form-row{grid-template-columns:1fr}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .skill-cards{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Jaycee<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Available for Digital Content & Communications Roles</div>
+    <h1>Jaycee Encarnacion</h1>
+    <div class="hero-role"><span id="typed"></span><span class="cursor"></span></div>
+    <p class="hero-statement">I turn dense information — economic data, policy updates, program details — into digital content people actually read, watch, and share. Four years of directing live broadcasts and institutional events taught me how to research fast, write for a real audience, and produce content that performs across platforms, from articles and newsletters to social posts and event coverage.</p>
+    <div class="hero-cta">
+      <a href="https://www.linkedin.com/in/jaycee-encarnacion-a06582259/" target="_blank" class="btn-primary">Download Resume</a>
+    </div>
+  </div>
+  <div class="hero-portrait">
+    <div class="portrait-frame">
+      <img src="https://drive.google.com/thumbnail?id=1bVIM0f-c6ECkzM-Rz2FPrmsqp0S4fxoO&sz=w1600" alt="Jaycee Encarnacion" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;">
+      <div class="portrait-corner tl"></div>
+      <div class="portrait-corner tr"></div>
+      <div class="portrait-corner bl"></div>
+      <div class="portrait-corner br"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="10">0</div>
+    <div class="stat-lbl">Projects Completed</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="8">0</div>
+    <div class="stat-lbl">Events Directed</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="4">0</div>
+    <div class="stat-lbl">Teams Led</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="5">0</div>
+    <div class="stat-lbl">Media Productions</div>
+  </div>
+  <div class="stat-item reveal">
+    <div class="stat-num" data-target="4">0</div>
+    <div class="stat-lbl">Years Experience</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-eyebrow">About Me</div>
+  <div class="about-grid">
+    <div class="about-body reveal">
+      <h2 class="sec-title" style="margin-bottom:28px">Turning complex stories<br>into content that connects</h2>
+      <p>I am a <strong>content writer and digital storyteller with a broadcasting background</strong>. My degree is in <strong>BA Broadcasting</strong>, but what I actually do — whether it's a scripted broadcast segment or a five-day institutional event — is the same core skill: research a topic quickly, understand who I'm writing for, and turn it into content that's clear, accurate, and worth someone's attention.</p>
+      <p>Four years of producing <strong>large-scale live productions, institutional events, and daily broadcast content</strong> means I've already built the habits a content role depends on — tight deadlines, real audiences, zero tolerance for confusing or inaccurate messaging. I've written and produced program content for graduation ceremonies and institutional milestones, coordinated messaging and stakeholder communication for a citywide humanitarian celebration, and led a daily morning broadcast recognized as Best Morning Show — planning segments, writing scripts, and keeping tone and branding consistent episode after episode.</p>
+      <p>So the offer is simple: <strong>a content writer who already knows how to research, translate technical or policy information into accessible stories, and produce across formats</strong> — articles, newsletters, social posts, and event coverage — with the added instinct for what keeps an audience engaged from headline to end.</p>
+      <div class="about-tags">
+        <span class="tag">Content Writing</span>
+        <span class="tag">Digital Storytelling</span>
+        <span class="tag">Research & Fact-Checking</span>
+        <span class="tag">SEO & Content Marketing</span>
+        <span class="tag">Social Media Strategy</span>
+        <span class="tag">Newsletter Writing</span>
+        <span class="tag">Event Communications</span>
+        <span class="tag">Brand & Tone Consistency</span>
+        <span class="tag">Audience Engagement</span>
+        <span class="tag">Analytics & Performance Reporting</span>
+      </div>
+    </div>
+    <div class="about-aside">
+      <div class="aside-card reveal">
+        <div class="aside-card-num">4+</div>
+        <div class="aside-card-lbl">Years creating content across broadcast, live events, and digital platforms</div>
+      </div>
+      <div class="aside-card reveal">
+        <div class="aside-card-num">10+</div>
+        <div class="aside-card-lbl">Multi-format content projects delivered end-to-end, on time, every time</div>
+      </div>
+      <div class="aside-card reveal">
+        <div class="aside-card-num">0</div>
+        <div class="aside-card-lbl">Missed deadlines on time-sensitive content and event coverage</div>
+      </div>
+      <div class="aside-card reveal">
+        <div class="aside-card-num">1</div>
+        <div class="aside-card-lbl">Best Morning Show award for original digital programming</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="sec-eyebrow">Portfolio</div>
+  <h2 class="sec-title">Selected Work</h2>
+  <p class="sec-sub">Events directed, media produced, and moments captured. Upload your own photos and videos to fill these frames.</p>
+
+  <div class="portfolio-tabs">
+    <button class="ptab active" onclick="switchTab('events',this)">Events Directed</button>
+    <button class="ptab" onclick="switchTab('media',this)">Media Productions</button>
+  </div>
+
+  <!-- EVENTS -->
+  <div id="tab-events" class="portfolio-section active">
+    <div class="gallery-grid">
+      <div class="gallery-card reveal">
+        <div class="gallery-thumb has-media" data-carousel='["https://drive.google.com/thumbnail?id=1E6NbrJolfW0wVQtzNFBCR33KAMho5rO2&sz=w1000","https://drive.google.com/thumbnail?id=1WRf6ktMFid3b_lq_JIDB4kFj1xZpYxrk&sz=w1000","https://drive.google.com/thumbnail?id=1sJ4jFGRrISmBnVKOmYmRgttrsq2ELPpP&sz=w1000"]'></div>
+        <div class="gallery-info">
+          <div class="gallery-tag">Community · Ongoing</div>
+          <div class="gallery-name">Grand Fiesta ng Dios: Brethren Day</div>
+          <div class="gallery-meta">Schedule Manager · July 2025 – Present</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-thumb has-media" data-carousel='["https://drive.google.com/thumbnail?id=1yaKEECpOod2POjyrhZ47dp7DyjExE7P3&sz=w1000","https://drive.google.com/thumbnail?id=1Lb3S1u7dx_3a3UiTULFXcuMcvtic5jii&sz=w1000","https://drive.google.com/thumbnail?id=1Zzb4eLSDgm0nEiPyxN0WcIgop_bk2iGR&sz=w1000","https://drive.google.com/thumbnail?id=1YBU9b0QFneiAjhPcWlVRe5o01RR3x9xh&sz=w1000","https://drive.google.com/thumbnail?id=1M3uuFMFyMju48dUUwfH7MX2tM-1u_rbz&sz=w1000","https://drive.google.com/thumbnail?id=1pM6hl7_ixlUa_4rF8PJ1_LiP2uMi1d-u&sz=w1000","https://drive.google.com/thumbnail?id=1ZIqa8cJRDzsn61INsCx_WVlzCqe7DAP0&sz=w1000","https://drive.google.com/thumbnail?id=1Tcw5nMLt6Mu_CHMrM12qm_OfQxxSeBRi&sz=w1000","https://drive.google.com/thumbnail?id=1yLzCwZirj6Y_8RueND3KqVLa0b7AhB74&sz=w1000","https://drive.google.com/thumbnail?id=1HeeeGW79G0EXFY6_lAxLGqRGen3-iplg&sz=w1000","https://drive.google.com/thumbnail?id=1qfoOSDxpvvWZsbGwVa_eWra_qIS99hke&sz=w1000","https://drive.google.com/thumbnail?id=1o76UUnrZjgNVoedLyRdP99bIBqry6i71&sz=w1000","https://drive.google.com/thumbnail?id=1NPCdGMttqARvG0eX8YVzEIw_LmBVnue8&sz=w1000","https://drive.google.com/thumbnail?id=1hKSBa-Q_SbPsf78qLfW3U3R-bIR6sJKw&sz=w1000","https://drive.google.com/thumbnail?id=1wHpeyS5IGYYGGIpw-0AEDSAtk0B0wl9D&sz=w1000"]'></div>
+        <div class="gallery-info">
+          <div class="gallery-tag">Institutional · 5 Days</div>
+          <div class="gallery-name">27th Foundation Week</div>
+          <div class="gallery-meta">On-Site Supervisor · Feb 2026</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-thumb has-media" data-carousel='["https://drive.google.com/thumbnail?id=1FsPIlcZ1i_DdZWz0C5LnqXC9QpaACFs2&sz=w1000","https://drive.google.com/thumbnail?id=1st_xXD77gGt78SAxGtwofSIfP90ZiWdi&sz=w1000","https://drive.google.com/thumbnail?id=123GGlGzyq6hZ__SMlRwb37YUcWF28Kaq&sz=w1000"]'></div>
+        <div class="gallery-info">
+          <div class="gallery-tag">Ceremony · Humanitarian</div>
+          <div class="gallery-name">42nd President's Day</div>
+          <div class="gallery-meta">Logistics Coordinator · Nov 2025</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-thumb has-media" data-carousel='["https://drive.google.com/thumbnail?id=1L9DF9eKRuiImUnEvmuB5McH2zMjKJ_9Z&sz=w1000","https://drive.google.com/thumbnail?id=1QdV_Qy0-ZlngAwt1MaCZon2f_YjHXrzQ&sz=w1000","https://drive.google.com/thumbnail?id=18slC2aDyiTo49FXQ4Nsr2pgRgPHjAUAe&sz=w1000","https://drive.google.com/thumbnail?id=1o4mZeYpaao7n8Ixh-nbHPurjSMiCU7jg&sz=w1000","https://drive.google.com/thumbnail?id=1V6YvTT14KEkJGPwGpqwrDJbTYEURa2p8&sz=w1000","https://drive.google.com/thumbnail?id=1JUtZ4Jn-dnJs3mt8CdFOBwtUZPwuZkpg&sz=w1000"]'></div>
+        <div class="gallery-info">
+          <div class="gallery-tag">Multi-Level · Ceremony</div>
+          <div class="gallery-name">Commencement Exercises</div>
+          <div class="gallery-meta">Timeline Supervisor · 2025–2026</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-thumb has-media" data-carousel='["https://drive.google.com/thumbnail?id=1VovAEQ3oZpvajr9UwTg5fn66iOfGzr1L&sz=w1000","https://drive.google.com/thumbnail?id=1RESI8R1dRY5gbPiJZ0IaVtZKgydJpbBY&sz=w1000","https://drive.google.com/thumbnail?id=1wL7PYWso6SSF0ggwW7iK0Fk6BOHfA3TQ&sz=w1000","https://drive.google.com/thumbnail?id=1RwcGRijC2---0DfpJRp3clv55iUEfizM&sz=w1000","https://drive.google.com/thumbnail?id=1HMPzawkyk_JwQsh4VZ5guaYdp9gUk0uY&sz=w1000","https://drive.google.com/thumbnail?id=1OLmNYfnBorQ7H6B4sSLw8lk38ZQeIvJw&sz=w1000","https://drive.google.com/thumbnail?id=11YSBAkX1Wy6pP9i1pER5IV2hNfTjYVsk&sz=w1000","https://drive.google.com/thumbnail?id=1U5gnHrger6XBPGnRWV4g_E5LCI4-w2dp&sz=w1000","https://drive.google.com/thumbnail?id=1VKa7CCPUoRSWI1hves0jFF_k9gn2H-nB&sz=w1000"]'></div>
+        <div class="gallery-info">
+          <div class="gallery-tag">School · 3 Days</div>
+          <div class="gallery-name">Communication Week Year 9</div>
+          <div class="gallery-meta">Run-of-Show Supervisor · Oct 2025</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal">
+        <div class="gallery-thumb has-media" data-carousel='["https://drive.google.com/thumbnail?id=1LLD2t4xhUMsIeo3EXFjekCtP2DRvZSdB&sz=w1000","https://drive.google.com/thumbnail?id=1kOK8FVhd7xV0_G0xs5zBiZXcJOtFnZgW&sz=w1000","https://drive.google.com/thumbnail?id=10zHp7rHVOhDS2zJgAMrEhewpde7dq2Eo&sz=w1000"]'></div>
+        <div class="gallery-info">
+          <div class="gallery-tag">Theater · School Production</div>
+          <div class="gallery-name">Art Angel (School Production)</div>
+          <div class="gallery-meta">Assistant Director</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDIA -->
+  <div id="tab-media" class="portfolio-section">
+    <div class="gallery-grid">
+      <a class="gallery-card reveal gallery-card-link" href="https://drive.google.com/file/d/1BlPZnABnjLwbDBPU6k8hyG61SXnB0Kte/view" target="_blank" rel="noopener">
+        <div class="gallery-thumb media-thumb">
+          <img class="media-thumb-img" src="https://drive.google.com/thumbnail?id=14d1fy8wu6PSxURdN6pV-9RwsJImlvaCc&sz=w1000" alt="Mornings with the Ligaya's">
+          <div class="gallery-overlay"><span>▶ Watch</span></div>
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-tag">Daily Broadcast · Best Morning Show 🏆</div>
+          <div class="gallery-name">Mornings with the Ligaya's</div>
+          <div class="gallery-meta">Director (Concept, Direction & Scheduling) · Ongoing</div>
+        </div>
+      </a>
+      <a class="gallery-card reveal gallery-card-link" href="https://www.youtube.com/live/WCFymZQirPM" target="_blank" rel="noopener">
+        <div class="gallery-thumb media-thumb">
+          <img class="media-thumb-img" src="https://drive.google.com/thumbnail?id=1p_5u9VG6YYb01zYMQL523JOf40ZRlpMC&sz=w1000" alt="Tindahan ni Aling Nena the Musical">
+          <div class="gallery-overlay"><span>▶ Watch</span></div>
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-tag">Theatre · Musical Production</div>
+          <div class="gallery-name">Tindahan ni Aling Nena the Musical</div>
+          <div class="gallery-meta">Overall Director · Jan–Feb 2026</div>
+        </div>
+      </a>
+      <a class="gallery-card reveal gallery-card-link" href="https://drive.google.com/file/d/1Y0BdpUwwO-PTA8-5ipI29XG1tNEoKu-D/view?t=1.992" target="_blank" rel="noopener">
+        <div class="gallery-thumb media-thumb">
+          <img class="media-thumb-img" src="https://drive.google.com/thumbnail?id=1Upj3K9crzkkWiH6_XcB-dn-MwqDM29Dv&sz=w1000" alt="Metapora — 37th CCP Gawad Alternatibo">
+          <div class="gallery-overlay"><span>▶ Watch</span></div>
+        </div>
+        <div class="gallery-info">
+          <div class="gallery-tag">National Finalist · CCP 🏅</div>
+          <div class="gallery-name">Metapora — 37th CCP Gawad Alternatibo</div>
+          <div class="gallery-meta">Production Designer · 2025</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-eyebrow">Experience</div>
+  <h2 class="sec-title">Professional Timeline</h2>
+  <p class="sec-sub">A record of schedules managed, executives and stakeholders supported, and teams led from planning through execution.</p>
+  <div class="timeline">
+
+    <div class="tl-item reveal">
+      <div class="tl-date">July 2025<br>— Present</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Ongoing · Community Event</div>
+        <div class="tl-role">Schedule Manager & Team Supervisor</div>
+        <div class="tl-org">Grand Fiesta ng Dios: Brethren Day</div>
+        <div class="tl-desc">Manage the master schedule and guide on-ground teams for this ongoing community event, keeping attendees engaged and satisfied without a single noticeable technical hitch.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Feb 23–27<br>2026</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Institutional · 5-Day Event</div>
+        <div class="tl-role">Schedule Manager & On-Site Supervisor</div>
+        <div class="tl-org">La Verdad Christian College 27th Foundation Week</div>
+        <div class="tl-desc">Oversaw scheduling and on-site execution across a 5-day institution-wide celebration, keeping the audience fully engaged with a seamless experience free of technical disruption.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Jan 20–<br>Feb 27, 2026</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Theatre · Musical Production</div>
+        <div class="tl-role">Overall Director</div>
+        <div class="tl-org">Tindahan ni Aling Nena the Musical</div>
+        <div class="tl-desc">Served as Overall Director for this original theatre production, leading creative vision, cast and crew, and full production scheduling from first rehearsal to opening night.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Nov 27<br>2025</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Stakeholder Event · Ceremony</div>
+        <div class="tl-role">Logistics & Communication Coordinator</div>
+        <div class="tl-org">42nd President's Day</div>
+        <div class="tl-desc">Organized logistics, timing, and stakeholder communication for Dr. Daniel Razon's humanitarian celebration, delivering a polished program that guests enjoyed without noticing a single technical issue.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Oct 27–29<br>2025</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">School Event · 3 Days</div>
+        <div class="tl-role">Run-of-Show Supervisor</div>
+        <div class="tl-org">Communication Week Year 9</div>
+        <div class="tl-desc">Planned and supervised the run-of-show schedule for a 3-day, school-wide event under tight deadlines, leaving students and faculty satisfied with a smooth, hitch-free production.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">2025–2026</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Ceremony · Multi-Level</div>
+        <div class="tl-role">Program Timeline Supervisor</div>
+        <div class="tl-org">Commencement Exercises · Pre-Kinder to Higher Education</div>
+        <div class="tl-desc">Planned and supervised program timelines for multiple graduation ceremonies under high-pressure conditions, leaving students and families satisfied with smooth, trouble-free ceremonies.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Ongoing</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Daily Broadcast · Award</div>
+        <div class="tl-role">Director</div>
+        <div class="tl-org">Mornings with the Ligaya's</div>
+        <div class="tl-desc">Conceptualized the show, directed the daily production team, and managed the full run schedule, consistently delivering a smooth broadcast that earned the program's Best Morning Show award.</div>
+        <div class="tl-badge">🏆 Best Morning Show</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">2025</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">CCP · National Finalist</div>
+        <div class="tl-role">Production Designer</div>
+        <div class="tl-org">Metapora — 37th CCP Gawad Alternatibo</div>
+        <div class="tl-desc">Coordinated production design and logistics that helped the entry advance to Finalist standing at the 37th CCP Gawad Alternatibo.</div>
+        <div class="tl-badge">🏅 National Finalist</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Oct 2025</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Conference · Speaker</div>
+        <div class="tl-role">Presenter</div>
+        <div class="tl-org">PACE of the Future Student Camp (CMSC)</div>
+        <div class="tl-desc">Shared ideas with clarity and confidence, leaving peers engaged and sparking active discussion throughout the two-day camp.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">Feb 27<br>2026</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">International · Research</div>
+        <div class="tl-role">Researcher</div>
+        <div class="tl-org">International Research Innovation Summit (IRIS 2026)</div>
+        <div class="tl-desc">Supported research coordination and academic discussions in an international setting, helping the team produce findings presented to summit attendees.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">2025</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Conference · Speaker</div>
+        <div class="tl-role">Resource Speaker</div>
+        <div class="tl-org">BAB 3 Research Conference</div>
+        <div class="tl-desc">Presented research insights with clarity, leaving participants equipped with practical takeaways for their own work.</div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-date">School<br>Project</div>
+      <div class="tl-body">
+        <div class="tl-dot"></div>
+        <div class="tl-tag">Theater · Production</div>
+        <div class="tl-role">Assistant Director</div>
+        <div class="tl-org">Art Angel (School Production)</div>
+        <div class="tl-desc">Coordinated scheduling, team communication, and on-set logistics, helping deliver a polished production that the school audience genuinely enjoyed without a single noticeable hitch.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-eyebrow">Skills</div>
+  <h2 class="sec-title">What I bring</h2>
+  <p class="sec-sub">Content, research, and digital communication skills sharpened by four years of real, high-stakes productions.</p>
+  <div class="skills-wrap">
+    <div>
+      <div class="skill-group-title">Content & Writing Skills</div>
+      <div class="skill-cards">
+        <div class="skill-card reveal"><div class="skill-card-name">Content Writing</div><div class="skill-card-sub">Articles, features & web copy</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Digital Storytelling</div><div class="skill-card-sub">Narrative-driven messaging</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Research & Fact-Checking</div><div class="skill-card-sub">Credible, accurate sourcing</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">SEO Writing</div><div class="skill-card-sub">Optimized for search & reach</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Translating Technical Info</div><div class="skill-card-sub">Complex made accessible</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Newsletter Writing</div><div class="skill-card-sub">Regular, on-brand updates</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Editing & Proofreading</div><div class="skill-card-sub">Polished, error-free copy</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Content Planning</div><div class="skill-card-sub">Editorial calendars & briefs</div></div>
+      </div>
+      <div class="skill-group-title">Digital & Communications Skills</div>
+      <div class="skill-cards">
+        <div class="skill-card reveal"><div class="skill-card-name">Social Media Strategy</div><div class="skill-card-sub">Multi-platform publishing</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Event Communications</div><div class="skill-card-sub">Before, during & after coverage</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Brand & Tone Consistency</div><div class="skill-card-sub">Unified voice across channels</div></div>
+        <div class="skill-card reveal"><div class="skill-card-name">Analytics & Performance Reporting</div><div class="skill-card-sub">Metrics-driven content decisions</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group-title">Software & Tools</div>
+      <div class="software-list">
+        <div class="software-item reveal"><span class="software-name">Google Workspace (Docs, Sheets, Slides, Meet)</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span></div></div>
+        <div class="software-item reveal"><span class="software-name">Microsoft Office (Word, Excel, PowerPoint)</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-empty"></span></div></div>
+        <div class="software-item reveal"><span class="software-name">AI Tools</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-empty"></span></div></div>
+        <div class="software-item reveal"><span class="software-name">Notion / Trello</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span></div></div>
+        <div class="software-item reveal"><span class="software-name">vMix</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-empty"></span></div></div>
+        <div class="software-item reveal"><span class="software-name">OBS Studio</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span></div></div>
+        <div class="software-item reveal"><span class="software-name">Adobe Premiere Pro</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+        <div class="software-item reveal"><span class="software-name">CapCut</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-empty"></span></div></div>
+        <div class="software-item reveal"><span class="software-name">Canva</span><div class="software-level"><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span><span class="dot-fill"></span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="sec-eyebrow">What I Do</div>
+  <h2 class="sec-title">Services</h2>
+  <p class="sec-sub">Executive support built on real production discipline — from a well-run inbox to a well-run stage.</p>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div class="service-name">Calendar & Inbox Management</div>
+      <div class="service-desc">Scheduling, prioritization, and correspondence handled so nothing slips and your day runs on time.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="service-name">Stakeholder & Executive Communication</div>
+      <div class="service-desc">Clear, professional liaison between you, your team, clients, and partners — verbal and written.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+      <div class="service-name">Travel & Logistics Coordination</div>
+      <div class="service-desc">Itineraries, bookings, and on-the-ground logistics planned with the same rigor as a live event.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div class="service-name">Document & Data Management</div>
+      <div class="service-desc">Confidential files, reports, and records organized and encoded with precision and discretion.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <div class="service-name">Project & Event Planning</div>
+      <div class="service-desc">Full creative and operational leadership of projects and events from concept through execution.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
+      <div class="service-name">Production Coordination</div>
+      <div class="service-desc">Workflow and schedule management for live productions, shows, and media projects.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div class="service-name">Broadcast & Livestream Production</div>
+      <div class="service-desc">Live and recorded broadcast oversight including technical setup and program flow.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <div class="service-name">Creative Direction</div>
+      <div class="service-desc">Visual and creative oversight to ensure consistent, compelling event and brand identity.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+      <div class="service-name">Production Scheduling</div>
+      <div class="service-desc">Master scheduling and run-of-show management for complex, multi-team productions.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+      <div class="service-name">Video Editing & Multimedia</div>
+      <div class="service-desc">Post-production editing for event coverage, promotional content, and broadcast materials.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="service-name">Presentation & Report Building</div>
+      <div class="service-desc">Polished slide decks, briefs, and reports built in Google Workspace and Microsoft Office.</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg></div>
+      <div class="service-name">Team & Vendor Coordination</div>
+      <div class="service-desc">On-ground and remote team supervision, plus vendor liaison during live events and projects.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-eyebrow">Get in Touch</div>
+  <h2 class="sec-title">Let's work together</h2>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-info-title">Open to opportunities</div>
+      <p>Whether you need a dependable executive assistant to run your schedule and inbox, or a producer to run your next live event — I'd love to hear what you're working on.</p>
+      <a href="mailto:jcencar4@gmail.com" class="contact-detail">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><div class="c-label">Email</div><div class="c-value">jcencar4@gmail.com</div></div>
+      </a>
+      <div class="contact-detail">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+        <div><div class="c-label">Phone</div><div class="c-value">+63 916-284-6964</div></div>
+      </div>
+      <a href="https://www.linkedin.com/in/jaycee-encarnacion-a06582259/" target="_blank" class="contact-detail">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div><div class="c-label">LinkedIn</div><div class="c-value">jaycee-encarnacion</div></div>
+      </a>
+      <div style="margin-top:6px">
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/jaycee-encarnacion-a06582259/" target="_blank" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="mailto:jcencar4@gmail.com" class="social-btn" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="Executive support, event direction, collaboration...">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn-send">Send Message</button>
+        <div id="form-msg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Jaycee Encarnacion. All rights reserved.</span>
+  <span><a href="mailto:jcencar4@gmail.com">jcencar4@gmail.com</a> · <a href="https://www.linkedin.com/in/jaycee-encarnacion-a06582259/" target="_blank">LinkedIn</a></span>
+</footer>
+
+<script>
+/* ── TYPING ── */
+const roles=['Digital Content Specialist','Content Writer','Digital Storyteller','Social Media Strategist','SEO Content Writer','Public Information & Communications'];
+let ri=0,ci=0,del=false;
+function type(){
+  const el=document.getElementById('typed');
+  const word=roles[ri];
+  if(!del){el.textContent=word.slice(0,ci+1);ci++;if(ci===word.length){del=true;setTimeout(type,1600);return;}}
+  else{el.textContent=word.slice(0,ci-1);ci--;if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+  setTimeout(type,del?50:90);
+}
+type();
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);obs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ── COUNTER ── */
+function animCount(el,target){
+  let n=0;const step=Math.ceil(target/40);
+  const t=setInterval(()=>{n=Math.min(n+step,target);el.textContent=n+(target>5?'+':'');if(n>=target)clearInterval(t);},40);
+}
+const cObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){animCount(e.target,+e.target.dataset.target);cObs.unobserve(e.target);}});
+},{threshold:0.5});
+document.querySelectorAll('.stat-num[data-target]').forEach(el=>cObs.observe(el));
+
+/* ── CAROUSELS ── */
+function initCarousels(){
+  document.querySelectorAll('.gallery-thumb[data-carousel]').forEach(el=>{
+    let images=[];
+    try{images=JSON.parse(el.dataset.carousel);}catch(e){return;}
+    if(!images.length)return;
+    let idx=0;
+    const img=document.createElement('img');
+    img.className='carousel-img';
+    img.src=images[0];
+    img.alt='';
+    el.appendChild(img);
+    if(images.length>1){
+      const prev=document.createElement('button');
+      prev.className='carousel-arrow prev';
+      prev.innerHTML='&#8249;';
+      prev.setAttribute('aria-label','Previous photo');
+      const next=document.createElement('button');
+      next.className='carousel-arrow next';
+      next.innerHTML='&#8250;';
+      next.setAttribute('aria-label','Next photo');
+      const counter=document.createElement('div');
+      counter.className='carousel-counter';
+      counter.textContent='1 / '+images.length;
+      el.appendChild(prev);
+      el.appendChild(next);
+      el.appendChild(counter);
+      function show(i){
+        idx=(i+images.length)%images.length;
+        img.src=images[idx];
+        counter.textContent=(idx+1)+' / '+images.length;
+      }
+      prev.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(idx-1);});
+      next.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(idx+1);});
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded',initCarousels);
+
+/* ── TABS ── */
+function switchTab(id,btn){
+  document.querySelectorAll('.portfolio-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ── FORM ── */
+function sendMessage(e){
+  e.preventDefault();
+  const msg=document.getElementById('form-msg');
+  msg.style.color='#60A5FA';
+  msg.textContent='✓ Message sent! Jaycee will get back to you soon.';
+  e.target.reset();
+}
+
+/* ── HAMBURGER ── */
+function toggleMenu(){
+  const links=document.querySelector('.nav-links');
+  if(links.style.display==='flex'){links.style.display='none';}
+  else{links.style.cssText='display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:rgba(15,17,23,0.97);padding:20px 6vw;border-bottom:1px solid rgba(148,163,184,0.10);gap:16px;';}
+}
+</script>
+</body>
+</html>
